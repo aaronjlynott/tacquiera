@@ -1,0 +1,28 @@
+#will titlecase the input and ignore any item that is not input
+
+menu = {
+    "Baja Taco": 4.00,
+    "Burrito": 7.50,
+    "Bowl": 8.50,
+    "Nachos": 11.00,
+    "Quesadilla": 8.50,
+    "Super Burrito": 8.50,
+    "Super Quesadilla": 9.50,
+    "Taco": 3.00,
+    "Tortilla Salad": 8.00
+}
+
+#start irder total at $0
+order_total = 0
+#forever loop
+while True:
+    try:
+        order = input('Item: ').title()
+        if order in menu:
+            order_total += menu[order]
+            print('Total: $',end='')
+            print(f'{order_total:.2f}')
+
+    except EOFError:
+        print()
+        break
